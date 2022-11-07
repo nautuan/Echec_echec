@@ -125,11 +125,11 @@ public class Plateau {
         // affiche Plateau
 
         for (int i =0; i<8; i++) {
-            System.out.print("\t\t"+(i+1));
+            System.out.print("\t\t"+(i));
         }
         System.out.println();
         for(int i=0; i<=7; i++) {
-            System.out.print(i+1+" ");
+            System.out.print(i+" ");
             for(int j=0; j<=7; j++) {
                 System.out.print("| "+plateau[i][j]);
             }
@@ -141,6 +141,14 @@ public class Plateau {
     public void supprimer_piece_plateau(int i, int j ) {
         this.plateau[i][j] = "      ";
         affiche_plateau();
+    }
+
+    public boolean case_vide (int x, int y) {
+        if (this.plateau[x][y] == "       ") {
+            return true;
+        }
+        System.out.println("Il n'y a pas de pièce sur cette case, reessayez une autre: ");
+        return false;
     }
 
     public void deplacer_piece_plateau(int x_saisir, int y_saisir, int x_deplacement, int y_deplacement ) {
