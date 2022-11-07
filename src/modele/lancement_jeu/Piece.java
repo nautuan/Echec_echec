@@ -11,6 +11,7 @@ public class Piece {
         this.position_x = position_x;
         this.position_y = position_y;
         this.portee_deplacement = portee_deplacement;
+        this.type_piece_couleur = type_piece_couleur;
     }
 
     public void setPosition_x(int position_x) {
@@ -34,10 +35,12 @@ public class Piece {
     }
 
     public int getPosition_x() {
+
         return position_x;
     }
 
     public int getPosition_y() {
+
         return position_y;
     }
 }
