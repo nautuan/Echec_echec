@@ -69,7 +69,7 @@ public class Lancement {
                         y_piece_saisi = entre_clavier.nextInt();
                     } while (y_piece_saisi < 0 || y_piece_saisi > 7);
                     case_vide = plateau_Echec.case_vide(x_piece_saisi, y_piece_saisi);
-                }while (case_vide == false);
+                }while (case_vide == true);
 
                 do {
                     System.out.println("Entre le X de deplacemen mon pote");

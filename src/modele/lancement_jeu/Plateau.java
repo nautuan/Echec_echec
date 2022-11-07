@@ -144,11 +144,12 @@ public class Plateau {
     }
 
     public boolean case_vide (int x, int y) {
-        if (this.plateau[x][y] == "       ") {
+        if (this.plateau[x][y].equals("      ")) {
+            System.out.println("Il n'y a pas de pièce sur cette case, reessayez une autre: ");
             return true;
+        }else {
+            return false;
         }
-        System.out.println("Il n'y a pas de pièce sur cette case, reessayez une autre: ");
-        return false;
     }
 
     public void deplacer_piece_plateau(int x_saisir, int y_saisir, int x_deplacement, int y_deplacement ) {
