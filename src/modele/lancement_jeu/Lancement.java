@@ -6,18 +6,23 @@ public class Lancement {
     public Lancement() {
 
     }
-    public String demande_piece () {
+    /*public String demande_piece () {
         Scanner entre_clavier = new Scanner(System.in);
-
+        // verif si saisi case_non_vide
+        boolean case_vide = false;
         int x_piece_saisi, y_piece_saisi, x_piece_deplace, y_piece_deplace;
         do {
+            do {
                 System.out.println("Selectionne le X de ta piece mon pote:");
                 x_piece_saisi = entre_clavier.nextInt();
-        }while(x_piece_saisi<1 || x_piece_saisi>8);
-        do {
-            System.out.println("Selectionne le Y de ta piece mon pote:");
-            y_piece_saisi = entre_clavier.nextInt();
-        }while(y_piece_saisi<1 || y_piece_saisi>8);
+
+            } while (x_piece_saisi < 1 || x_piece_saisi > 8 ||);
+            do {
+                System.out.println("Selectionne le Y de ta piece mon pote:");
+                y_piece_saisi = entre_clavier.nextInt();
+            } while (y_piece_saisi < 1 || y_piece_saisi > 8);
+            plate
+        }while (case_vide == true);
         do {
             System.out.println("Entre le X de deplacemen mon pote");
             x_piece_deplace = entre_clavier.nextInt();
@@ -29,7 +34,7 @@ public class Lancement {
 
         String sum = ""+x_piece_saisi+x_piece_deplace+y_piece_deplace+y_piece_saisi;
         return sum;
-    }
+    } */
 
 
     public void lancer_le_jeux() {
@@ -51,14 +56,30 @@ public class Lancement {
         int x_piece_saisi, y_piece_saisi, x_piece_deplace, y_piece_deplace;
         do {
             if (tour%2 == 1){
-                System.out.println("Selectionne le X de ta piece mon pote:");
-                x_piece_saisi = entre_clavier.nextInt();
-                System.out.println("Selectionne le Y de ta piece mon pote:");
-                y_piece_saisi = entre_clavier.nextInt();
-                System.out.println("Entre le X de deplacemen mon pote");
-                x_piece_deplace = entre_clavier.nextInt();
-                System.out.println("Entre le X deplacement mon pote");
-                y_piece_deplace = entre_clavier.nextInt();
+                // verif si saisi case_non_vide
+                boolean case_vide = false;
+                do {
+                    do {
+                        System.out.println("Selectionne le X de ta piece mon pote:");
+                        x_piece_saisi = entre_clavier.nextInt();
+
+                    } while (x_piece_saisi < 0 || x_piece_saisi > 7 );
+                    do {
+                        System.out.println("Selectionne le Y de ta piece mon pote:");
+                        y_piece_saisi = entre_clavier.nextInt();
+                    } while (y_piece_saisi < 0 || y_piece_saisi > 7);
+                    case_vide = plateau_Echec.case_vide(x_piece_saisi, y_piece_saisi);
+                }while (case_vide == false);
+
+                do {
+                    System.out.println("Entre le X de deplacemen mon pote");
+                    x_piece_deplace = entre_clavier.nextInt();
+                }while(x_piece_deplace<0 || x_piece_deplace>7);
+                do {
+                    System.out.println("Entre le X deplacement mon pote");
+                    y_piece_deplace = entre_clavier.nextInt();
+                }while(y_piece_deplace<0 || y_piece_saisi>7);
+
 
                 plateau_Echec.deplacer_piece_plateau(x_piece_saisi,y_piece_saisi,y_piece_deplace,x_piece_deplace);
                 plateau_Echec.affiche_plateau();
