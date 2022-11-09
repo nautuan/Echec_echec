@@ -115,7 +115,7 @@ public class Plateau {
         liste_pieces.add(R_b);
         Reine R_n = new Reine(7,3,"Rein_N");
         liste_pieces.add(R_n);
-
+        // String nom = "boonjour"; CharSequence bon = "-B"; nom.contains(bon);
 
     }
     /*
@@ -156,12 +156,13 @@ public class Plateau {
         //saisir une pièce puis dire ou tu veux déplacer
         for (Piece p: liste_pieces) {  // mettre toutes les pieces dans une seule liste
             // on rentre que si on est dans piece
-            if (p.getPosition_x() == x_saisir-1 && p.getPosition_y() == y_saisir-1 ){
+            if (p.getPosition_x() == x_saisir && p.getPosition_y() == y_saisir ){
                  // verif pas piece déja la ou on veux
-
                 // verif portee deplacement possible
-
-                    plateau[x_deplacement-1][y_deplacement-1]= p.getType_piece_couleur();
+                System.out.println(p.getPosition_x()+", "+p.getPosition_y());
+                System.out.println(y_deplacement+", "+x_deplacement);
+                System.out.println(p.getType_piece_couleur());
+                    plateau[y_deplacement][x_deplacement]= p.getType_piece_couleur();
                     p.setPosition_x(x_saisir);
                     p.setPosition_y(y_saisir);
                     supprimer_piece_plateau(p.getPosition_x(),p.getPosition_y());

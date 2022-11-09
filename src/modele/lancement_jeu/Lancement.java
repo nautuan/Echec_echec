@@ -71,15 +71,22 @@ public class Lancement {
                     case_vide = plateau_Echec.case_vide(x_piece_saisi, y_piece_saisi);
                 }while (case_vide == true);
 
+                // TODO utiliser string.contains pour interdire manger allier
+                // DONE interdire deplacement meme position (FAIT)
+                // TODO autoriser que les deplacements possible de la piece
+                // TODO faire fonctionner methode deplacer_piece_plateau (afficher le deplacement)
+                //do {
                 do {
-                    System.out.println("Entre le X de deplacemen mon pote");
-                    x_piece_deplace = entre_clavier.nextInt();
-                }while(x_piece_deplace<0 || x_piece_deplace>7);
-                do {
-                    System.out.println("Entre le X deplacement mon pote");
-                    y_piece_deplace = entre_clavier.nextInt();
-                }while(y_piece_deplace<0 || y_piece_saisi>7);
-
+                    do {
+                        System.out.println("Entre le X de deplacemen mon pote");
+                        x_piece_deplace = entre_clavier.nextInt();
+                    } while (x_piece_deplace < 0 || x_piece_deplace > 7);
+                    do {
+                        System.out.println("Entre le Y deplacement mon pote");
+                        y_piece_deplace = entre_clavier.nextInt();
+                    } while (y_piece_deplace < 0 || y_piece_saisi > 7);
+                }while(x_piece_deplace==x_piece_saisi && y_piece_deplace==y_piece_saisi);
+                // TODO while(== true || == true || );
 
                 plateau_Echec.deplacer_piece_plateau(x_piece_saisi,y_piece_saisi,y_piece_deplace,x_piece_deplace);
                 plateau_Echec.affiche_plateau();
