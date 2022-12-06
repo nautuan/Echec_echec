@@ -172,7 +172,9 @@ public class Plateau {
     }
 
     public boolean case_vide (int x, int y) {
+        System.out.println("ZZZZ");
         if (this.plateau[x][y].equals("      ")) {
+            System.out.println("ZZZZdeux");
             System.out.println("Il n'y a pas de pièce sur cette case, reessayez une autre: ");
             return true;
         }else {
@@ -181,6 +183,15 @@ public class Plateau {
     }
 
     public void deplacer_piece_plateau(int x_saisir, int y_saisir, int x_deplacement, int y_deplacement, Joueur joueurJouant) {
+        // Test si nouvelle case vide
+        if(this.plateau[x_deplacement][y_deplacement].equals("      ")){// PB ICI AVEC LE IF !!!!
+            System.out.println("yello");
+        }else{
+            System.out.println("YOOOOOOOOOOOOOOOOOOOOOO");
+            supprimer_piece_plateau(y_deplacement, x_deplacement, joueurJouant);
+        }
+
+
         //saisir une pièce puis dire ou tu veux déplacer
         for (Piece p: joueurJouant.liste_pieces) {  // mettre toutes les pieces dans une seule liste
             // on rentre que si on est dans piece
@@ -193,6 +204,7 @@ public class Plateau {
                 System.out.println("Position selectionnee (reel Y/X) : "+p.getPosition_x()+", "+p.getPosition_y());
                 System.out.println("Position voulue (reel Y/X) : "+y_deplacement+", "+x_deplacement);
                 System.out.println("Piece deplacee : "+p.getType_piece_couleur());
+
                 supprimer_piece_plateau(p.getPosition_x(),p.getPosition_y());
                 p.setPosition_x(y_deplacement); // TODO erreur
                 p.setPosition_y(x_deplacement);
@@ -200,6 +212,22 @@ public class Plateau {
             }
         }
     }
+
+    public void supprimer_piece_plateau(int x_deplacement, int y_deplacement, Joueur joueurJouant) {
+        //saisir une pièce puis dire ou tu veux déplacer
+        int position_piece_a_supprimer = -1;
+        for (int i=0; i<joueurJouant.liste_pieces.size();i++) {  // mettre toutes les pieces dans une seule liste
+            if(joueurJouant.liste_pieces.get(i).getPosition_x() == x_deplacement && joueurJouant.liste_pieces.get(i).getPosition_y() == y_deplacement)
+            {
+                System.out.println("Je veux supprimer cette piece : " + joueurJouant.liste_pieces.get(i).toString());
+                position_piece_a_supprimer = i;
+                System.out.println("Position : " + position_piece_a_supprimer);
+            }
+        }
+        joueurJouant.liste_pieces.remove(position_piece_a_supprimer);
+
+    }
+
 
     public String[][] getPlateau() {
         return plateau;

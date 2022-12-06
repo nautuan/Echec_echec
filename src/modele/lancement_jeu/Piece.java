@@ -43,6 +43,16 @@ public class Piece {
 
         return this.position_y;
     }
+
+    @Override
+    public String toString() {
+        return "Piece{" +
+                "position_x=" + position_x +
+                ", position_y=" + position_y +
+                ", portee_deplacement=" + portee_deplacement +
+                ", type_piece_couleur='" + type_piece_couleur + '\'' +
+                '}';
+    }
 }
 
 
