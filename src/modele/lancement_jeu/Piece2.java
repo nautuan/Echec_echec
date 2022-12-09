@@ -3,16 +3,16 @@ package modele.lancement_jeu;
 
 import java.util.ArrayList;
 
-public class Piece {
-    protected int position_x;
-    protected int position_y;
-    protected int portee_deplacement;
-    protected String type_piece_couleur;
+public class Piece2 {
+    private int position_x;
+    private int position_y;
+    private int portee_deplacement;
+    private String type_piece_couleur;
 
-    protected ArrayList<Integer[]> deplacementsPossibles = new ArrayList<>(); // nouvelle variable ajoutée (en attendant une classe COORDONNES)
-    public static Piece pieceNulle; // A VOIR SI ON GARDE
+    private ArrayList<Integer[]> deplacementsPossibles = new ArrayList<>(); // nouvelle variable ajoutée (en attendant une classe COORDONNES)
+    public static Piece2 pieceNulle; // Piece ajoutee qui représente l'absence de pieces
 
-    public Piece(int position_x, int position_y, int portee_deplacement,String type_piece_couleur) {
+    public Piece2(int position_x, int position_y, int portee_deplacement, String type_piece_couleur) {
         this.position_x = position_x;
         this.position_y = position_y;
         this.portee_deplacement = portee_deplacement;
@@ -69,34 +69,7 @@ public class Piece {
         this.deplacementsPossibles = tabTest;
     }
 
-    public void calculMouvementsPossibles(){
-        System.out.println("Calcul des mouvements possibles");
-    }
 
-    public void verifMouvementPossible(int x_piece_saisie, int y_piece_saisie){
-        System.out.println("Calcul des mouvements possibles");
-    }
-
-
-/*    public Piece2 retrouverPiece(int x_piece_saisie, int y_piece_saisie){
-
-        for (int i=0; i< this.liste_pieces.size(); i++){
-            if(liste_pieces.get(i).getPosition_x() == x_piece_saisie && liste_pieces.get(i).getPosition_y() == y_piece_saisie){
-                return liste_pieces.get(i);
-            }
-        }
-        System.out.println("ERREUR - pièce non trouvée");
-        return Piece2.pieceNulle; // A VOIR SI BIEN...
-    }
-
-    public void calculMouvementsPossibles(int x_piece_saisie, int y_piece_saisie){
-        Piece2 piece_choisie = retrouverPiece(x_piece_saisie,y_piece_saisie);
-        if (piece_choisie.equals(Piece2.pieceNulle)){
-
-        }else{
-
-        }
-    }*/
 
 
 }

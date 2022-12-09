@@ -192,7 +192,7 @@ public class Lancement {
                 }while(x_piece_deplace==x_piece_saisi && y_piece_deplace==y_piece_saisi);
                 // TODO while(== true || == true || );
 
-                plateau_Echec.deplacer_piece_plateau(x_piece_saisi,y_piece_saisi,y_piece_deplace,x_piece_deplace, plateau_Echec.getJoueurBlanc());
+                plateau_Echec.deplacer_piece_plateau(x_piece_saisi,y_piece_saisi,y_piece_deplace,x_piece_deplace, plateau_Echec.getJoueurNoir());
                 plateau_Echec.affiche_plateau();
             }
 

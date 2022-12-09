@@ -184,7 +184,8 @@ public class Plateau {
 
     public void deplacer_piece_plateau(int x_saisir, int y_saisir, int x_deplacement, int y_deplacement, Joueur joueurJouant) {
         // Test si nouvelle case vide
-        if(this.plateau[x_deplacement][y_deplacement].equals("      ")){// PB ICI AVEC LE IF !!!!
+        String caseVideText = new String("      ");
+        if(this.plateau[y_deplacement][x_deplacement].equals(caseVideText)){// PB ICI AVEC LE IF !!!!
             System.out.println("yello");
         }else{
             System.out.println("YOOOOOOOOOOOOOOOOOOOOOO");

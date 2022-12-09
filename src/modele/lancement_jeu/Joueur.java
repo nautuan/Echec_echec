@@ -11,7 +11,7 @@ public class Joueur {
     private String couleur_joueur;
     private Plateau plateau;
 
-    public List<Piece> liste_pieces = new ArrayList<>(); // NON ajouter dans classe joueur
+    public List<Piece> liste_pieces = new ArrayList<>();
 
     public Joueur(String nom_joueur, String couleur_joueur, Plateau plateau) {
         this.nom_joueur = nom_joueur;
@@ -123,6 +123,28 @@ public class Joueur {
                 p.setPosition_y(y_deplacement);
                 plateau.supprimer_piece_plateau(p.getPosition_y(),p.getPosition_x());
             }
+        }
+    }*/
+
+    // NOUVELLES FONCTIONS
+
+/*    public Piece2 retrouverPiece(int x_piece_saisie, int y_piece_saisie){
+
+        for (int i=0; i< this.liste_pieces.size(); i++){
+            if(liste_pieces.get(i).getPosition_x() == x_piece_saisie && liste_pieces.get(i).getPosition_y() == y_piece_saisie){
+                return liste_pieces.get(i);
+            }
+        }
+        System.out.println("ERREUR - pièce non trouvée");
+        return Piece2.pieceNulle; // A VOIR SI BIEN...
+    }
+
+    public void calculMouvementsPossibles(int x_piece_saisie, int y_piece_saisie){
+        Piece2 piece_choisie = retrouverPiece(x_piece_saisie,y_piece_saisie);
+        if (piece_choisie.equals(Piece2.pieceNulle)){
+
+        }else{
+
         }
     }*/
 
